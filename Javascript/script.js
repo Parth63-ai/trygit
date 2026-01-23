@@ -67,3 +67,52 @@ bts.addEventListener('click',(event)=>{
     console.log("Button Clicked");
 });
 
+debugger;
+let a =4567
+var b =8999
+
+console.log(a)
+console.log(b)
+
+function print(){
+    var c= 867
+    console.log(c)
+    console.log("Inside fn")
+}
+
+print()
+
+// Call stack
+function first(){
+    second ();
+}
+function second(){
+    third();
+}
+function third(){
+    console.trace();
+}
+
+first();
+
+function infinite(){
+    infinite();
+}
+
+infinite();
+
+// console.log(c)
+// var c = 345
+// let b = 789
+
+// console.log(c)
+// console.log(b)
+
+
+let total=40;
+
+function calculate(){
+    console.log(total);
+    let total=100;
+}
+calculate();
