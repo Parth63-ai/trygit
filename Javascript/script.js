@@ -112,7 +112,16 @@ infinite();
 let total=40;
 
 function calculate(){
-    console.log(total);
     let total=100;
+    console.log(total); 
 }
 calculate();
+
+
+
+
+console.log("First line");
+setTimeout(()=>{
+    console.log("After 2 seconds");
+},2000);
+console.log("Second line");
