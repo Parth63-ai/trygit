@@ -7,3 +7,24 @@
     border-radius: 5px;
     cursor: pointer;    
 }
+
+.btm{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li{
+    font-size: 18px;
+    margin: 5px 0;
+    color: #333;
+    background-color: yellow;
+}
+
+button{
+    background-color: blue;
+}
