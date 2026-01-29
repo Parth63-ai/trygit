@@ -170,6 +170,10 @@ const name = document.querySelector('#name');
 const btm = document.querySelector('.btm');
 const list = document.querySelector('.list');
 btm.addEventListener('click',()=>{
+    if(name.value === ""){
+        alert("Please enter a name");
+        return;
+    }
     const li = document.createElement('li');
     const dlt = document.createElement('button');
     dlt.innerText = "Delete";
@@ -180,4 +184,5 @@ btm.addEventListener('click',()=>{
     li.appendChild(dlt);
     list.appendChild(li);
     name.value = "";
+    
 });
