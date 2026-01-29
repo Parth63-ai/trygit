@@ -149,40 +149,58 @@ first();
 //     console.log("Cleared Interval");
 // },10000);
 
-let num = 1;
-const id = setInterval(()=>{
-    if (num === 10){
-        clearInterval(id);
-    }
-    console.log(num)
-    num+=1;
-},1000);
+// let num = 1;
+// const id = setInterval(()=>{
+//     if (num === 10){
+//         clearInterval(id);
+//     }
+//     console.log(num)
+//     num+=1;
+// },1000);
 
 
-console.log("before timeout");
-setTimeout(()=>{
-    console.log("inside timeout");
-},0);
-console.log("after timeout");
+// console.log("before timeout");
+// setTimeout(()=>{
+//     console.log("inside timeout");
+// },0);
+// console.log("after timeout");
 
 
-const name = document.querySelector('#name');
-const btm = document.querySelector('.btm');
-const list = document.querySelector('.list');
-btm.addEventListener('click',()=>{
-    if(name.value === ""){
-        alert("Please enter a name");
-        return;
-    }
-    const li = document.createElement('li');
-    const dlt = document.createElement('button');
-    dlt.innerText = "Delete";
-    li.innerText = name.value;
-    dlt.addEventListener('click',()=>{
-        list.removeChild(li);
-    });
-    li.appendChild(dlt);
-    list.appendChild(li);
-    name.value = "";
+// const name = document.querySelector('#name');
+// const btm = document.querySelector('.btm');
+// const list = document.querySelector('.list');
+// btm.addEventListener('click',()=>{
+//     if(name.value === ""){
+//         alert("Please enter a name");
+//         return;
+//     }
+//     const li = document.createElement('li');
+//     const dlt = document.createElement('button');
+//     dlt.innerText = "Delete";
+//     li.innerText = name.value;
+//     dlt.addEventListener('click',()=>{
+//         list.removeChild(li);
+//     });
+//     li.appendChild(dlt);
+//     list.appendChild(li);
+//     name.value = "";
     
-});
+// });
+console.log("First line");
+setTimeout(()=>{
+    console.log("Inside timeout");
+},2000);
+console.log("Second line");
+
+function print(num){
+    setTimeout(()=>{
+        console.log("Inside setTimeout");
+        num();
+    },3000);
+    
+}
+
+function callback(){
+    console.log("Inside callback");
+}
+print(callback);
