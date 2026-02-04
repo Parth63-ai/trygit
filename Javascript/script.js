@@ -249,3 +249,67 @@ finishHomework(() => {
         goToPlayground();
     });
 });
+
+console.log("Before Promise");
+const p = new Promise((resolve, reject) => {
+    let done = true;
+    setTimeout(() => {
+        if (done) {
+            resolve("Promise resolved!");
+        } else {
+            reject("Promise rejected!");
+        }
+    }, 2000);
+});
+
+p.then((result) => {
+    console.log(result);
+}).catch((error) => {
+    console.log(error);
+}).finally(() => {
+    console.log("Promise process completed.");
+});
+console.log("After Promise");
+
+
+function dohomework(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let done = true;
+            if(done){
+                console.log("Homework completed!");
+                resolve("Homework done!");
+            }else{
+                reject("Homework not done!");
+            }
+        }, 3000);
+    });
+}
+
+function eatdinner(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let done = true;
+            if(done){
+                console.log("Dinner done!");
+                resolve("Dinner done!");
+            }else{
+                reject("Dinner not done!");
+            }
+        },2000);
+    });
+}
+
+function gotoPlayground(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let permission = true;
+            if(permission){
+                console.log("Going to the playground!");
+                resolve("Went to playground!");
+            }else{
+                reject("Couldn't go to playground!");
+            }
+        },1000);
+    });
+}
