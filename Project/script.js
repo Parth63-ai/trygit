@@ -1,28 +1,67 @@
-const form = document.querySelector('#form');
-const eventCards = document.querySelector('.cards');
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    console.log(eventtitle.value);
-    console.log(eventdate.value);
-    console.log(category.value);
-    console.log(description.value);
+document.addEventListener('DOMContentLoaded', () => {
+    const eventForm = document.getElementById('event-form');
+    const eventList = document.querySelector('.list');
+    const clearAllBtn = document.getElementById('clear-all');
+    const addSampleBtn = document.getElementById('add-sample');
+
+   
+    eventForm.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+
+        
+        const title = document.getElementById('eventtitle').value;
+        const date = document.getElementById('eventdate').value;
+        const category = document.getElementById('category').value;
+        const description = document.getElementById('description').value;
+
+        
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <span class="delete-card-btn">×</span>
+            <h3>${title}</h3>
+            <p>📅 ${date}</p>
+            <span class="category-badge">${category}</span>
+            <p>${description}</p>
+        `;
+
+        
+        card.querySelector('.delete-card-btn').addEventListener('click', () => {
+            card.remove();
+        });
+
+        eventList.appendChild(card);
+        eventForm.reset(); 
+    });
 
 
-const card = document.createElement('div');
-card.classList.add('card');
-card.innerHTML = `
-    <h2>${eventtitle.value}</h2>
-    <p>${eventdate.value}</p>
-    <p>${category.value}</p>
-    <p>${description.value}</p>
-    <div class="delete-card">X</div>
-`;
-card.querySelector('.delete-card').addEventListener('click', function() {
-    card.remove();
-});
-eventCards.appendChild(card);
-});
+    clearAllBtn.addEventListener('click', () => {
+        if (confirm("Delete all events?")) {
+            eventList.innerHTML = '';
+        }
+    });
 
-document.addEventListener('keydown', function(event) {
-    document.querySelector('.key').innerTextevent
+    addSampleBtn.addEventListener('click', () => {
+        const sampleEvents = [
+            { title: "Tech Workshop", date: "2026-03-15", category: "Workshop", desc: "Learning modern CSS." },
+            { title: "Networking Gala", date: "2026-04-20", category: "Social", desc: "Meet and greet experts." }
+        ];
+
+        sampleEvents.forEach(ev => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <span class="delete-card-btn">×</span>
+                <h3>${ev.title}</h3>
+                <p>📅 ${ev.date}</p>
+                <span class="category-badge">${ev.category}</span>
+                <p>${ev.desc}</p>
+            `;
+            
+           
+            card.querySelector('.delete-card-btn').addEventListener('click', () => card.remove());
+            
+            document.querySelector('.list').appendChild(card);
+        });
+    });
 });
