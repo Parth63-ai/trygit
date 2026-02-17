@@ -313,3 +313,17 @@ function gotoPlayground(){
         },1000);
     });
 }
+
+console.log("First line");
+try{
+    let sample = 110;
+    console.log(sample);
+    console.log("Line after sample");
+    let age = 16;
+    if(age < 18){
+        throw new Error("Age must be 18 or above.");
+    }
+}catch(err){
+    console.error(err);
+}
+console.log("Last line");
