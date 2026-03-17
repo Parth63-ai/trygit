@@ -1,0 +1,58 @@
+body{
+    font-family: Arial;
+    margin:0;
+    background:#1d2a57;
+    color:white;
+}
+
+header{
+    text-align:center;
+    font-size:26px;
+    padding:20px;
+    font-weight:bold;
+}
+
+.container{
+    display:flex;
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    color:black;
+    padding:20px;
+    border-radius:8px;
+    flex:1;
+}
+
+input{
+    padding:10px;
+    width:65%;
+}
+
+button{
+    padding:10px;
+    background:#ff6b3d;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+#historyBtn button{
+    margin:5px;
+    padding:6px 10px;
+    border-radius:15px;
+    background:#ff6b3d;
+}
+
+.consoleCard{
+    margin:20px;
+    background:#0b1a3d;
+    padding:15px;
+    border-radius:6px;
+}
+
+pre{
+    color:#00ff9d;
+}
