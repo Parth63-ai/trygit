@@ -60,7 +60,7 @@ import axios from 'axios'
      function Sample() {
      const [count, setCount] = useState(0);
      const [name, setName] = useState("Parth")
-     const [loading, setLoading] = useState(true)
+     const [loading, setLoading] = useState(false)
 
      useEffect(() => {
       console.log("Component did mount")
