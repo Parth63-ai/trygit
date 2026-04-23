@@ -6,6 +6,8 @@ import './App.css'
 import Sample from './Components/Sample.jsx'
 import Navbar from './Components/Navbar.jsx'
 import Homepage from './Components/Homepage.jsx'
+import Contact from './Components/Contact.jsx'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,10 +16,13 @@ function App() {
 
   return (
     <>
-      <Navbar list={menu} />
-      <Navbar list={abc} />
-      <Sample />
-      <Homepage />
+     <Routes>
+        
+        <Route path="/" element={<><Navbar list={menu} /><Homepage /></>} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/sample" element={<><Sample /></>} />
+      </Routes>
+      
     </>
   )
 }

@@ -23,11 +23,11 @@
 
 
 import React, { use } from 'react'
-import { useState } from 'react'
+// import { useState } from 'react'
 import styles from '../css/Sample.module.css'
 import NavStyle from '../css/Navbar.module.css'
 import styled from '@emotion/styled'
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useRef} from 'react'
 import {css} from '@emotion/react'
 import axios from 'axios'
 // import React, { Component } from 'react'
@@ -61,6 +61,7 @@ import axios from 'axios'
      const [count, setCount] = useState(0);
      const [name, setName] = useState("Parth")
      const [loading, setLoading] = useState(false)
+     const inputRef = useRef("null")
 
      useEffect(() => {
       console.log("Component did mount")
@@ -107,6 +108,8 @@ import axios from 'axios'
        <h2>Count: {count}</h2>
        <h3>Name: {name}</h3>
        <h3>Loading: {loading ? "Yes" : "No"}</h3>
+       <input type="text" ref={inputRef} />
+       <button onClick={() => inputRef.current.value="Alex"}>Fill the input</button>
        <button className={styles.btn} onClick={() => setName("Alice")}>
          Change Name
        </button>
